@@ -5,7 +5,7 @@ def args = ["-Xlint:deprecation","-Xlint:unchecked","-Werror"]
 buildscript {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 
     dependencies {
@@ -16,10 +16,8 @@ buildscript {
 rootProject.allprojects {
     repositories {
         google()
-        jcenter()
-        flatDir {
-            dirs "$rootDir/libs"  // Thêm dòng này để tìm file trong thư mục libs
-        }
+        mavenCentral()
+        
     }
 }
 
@@ -47,9 +45,9 @@ android {
     }
 
     dependencies {
-        implementation files('libs/exoplayer-core-2.9.6.jar')
-        implementation files('libs/exoplayer-hls-2.9.6.jar')
-        implementation files('libs/exoplayer-dash-2.9.6.jar')
-        // implementation files('libs/exoplayer-smoothstreaming-2.9.6.jar')
+        implementation 'com.google.android.exoplayer:exoplayer-core:2.9.6'
+        implementation 'com.google.android.exoplayer:exoplayer-hls:2.9.6'
+        implementation 'com.google.android.exoplayer:exoplayer-dash:2.9.6'
+        implementation 'com.google.android.exoplayer:exoplayer-smoothstreaming:2.9.6'
     }
 }
