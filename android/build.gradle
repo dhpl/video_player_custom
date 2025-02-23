@@ -17,7 +17,9 @@ rootProject.allprojects {
     repositories {
         google()
         mavenCentral()
-        
+        flatDir {
+            dirs 'libs'
+        }
     }
 }
 
@@ -45,9 +47,13 @@ android {
     }
 
     dependencies {
-        implementation 'com.google.android.exoplayer:exoplayer-core:2.9.6'
-        implementation 'com.google.android.exoplayer:exoplayer-hls:2.9.6'
-        implementation 'com.google.android.exoplayer:exoplayer-dash:2.9.6'
-        implementation 'com.google.android.exoplayer:exoplayer-smoothstreaming:2.9.6'
+        implementation(name: 'exoplayer-core-2.13.3', ext: 'aar')
+        implementation(name: 'exoplayer-hls-2.13.3', ext: 'aar')
+        implementation(name: 'exoplayer-dash-2.13.3', ext: 'aar')
+        implementation(name: 'exoplayer-smoothstreaming-2.13.3', ext: 'aar')
+        // implementation 'com.google.android.exoplayer:exoplayer-core:2.9.6'
+        // implementation 'com.google.android.exoplayer:exoplayer-hls:2.9.6'
+        // implementation 'com.google.android.exoplayer:exoplayer-dash:2.9.6'
+        // implementation 'com.google.android.exoplayer:exoplayer-smoothstreaming:2.9.6'
     }
 }
